@@ -2,19 +2,19 @@ programa {
 
   inclua biblioteca Util
 
-    cadeia opcao, nome_cliente
-    inteiro idade 
+    cadeia opcao, nome_cliente[8]
+    inteiro idade[8], quant = 0, n 
 
     funcao inicio() {
 
     limpa()
 
     escreva(".**************************************************************************************.\n")
-    escreva("|                                 SISTEMA DE CADASTO                                   |\n")
+    escreva("|                                 SISTEMA DE CADASTRO                                   |\n")
     escreva("'**************************************************************************************'\n")
 
-    escreva(" 1 - Cadrastar novo cliente\n")
-    escreva(" 2 - Visualizar clienter cadastrados\n")
+    escreva(" 1 - Cadastrar novo cliente\n")
+    escreva(" 2 - Visualizar cliente cadastrados\n")
     escreva(" 3 - Sair do sistema\n")
 
     escreva(".**************************************************************************************.\n")
@@ -27,22 +27,24 @@ programa {
         {
             limpa()
             escreva("Informe o nome do cliente:\n")
-            leia(nome_cliente)
+            leia(nome_cliente[quant])
 
 
             limpa()
-            escreva("Qual a idade do(a) cliente ", nome_cliente, ":\n")
-            leia(idade)
+            escreva("Qual a idade do(a) cliente ", nome_cliente[quant], ":\n")
+            leia(idade[quant])
 
 
             limpa()
+            quant++
+
             //Exibe mensagem de usuário cadastrado com sucesso
             escreva("AVISO: Usuário cadastrado com sucesso!")
             Util.aguarde(3000)
 
             //Retorna para o menu inicio
             inicio()
-            pare
+            pare1
         }
 
         caso "2":
@@ -53,11 +55,59 @@ programa {
               escreva("|                                 CLIENTES CADASTRADOS                                 |\n")
               escreva("'**************************************************************************************'\n")
 
-              escreva("Nº 01 - ", nome_cliente, " - Idade: ", idade, "\n")
+              para(n = 0; n < quant; n++)
+              {
+                escreva("Nº: ", n+1, "-", nome_cliente[n], " - idade,", idade[n], "\n")
+              }
 
               escreva(".**************************************************************************************.\n")
               Util.aguarde(5000) //Aguarde 05 segundos
               inicio()
+              pare
+        }
+
+        caso "3":
+        {
+              limpa()
+              escreva("Saindo do sistema em 05 segundos...")
+              Util.aguarde(1000)
+
+              limpa()
+              escreva("Saindo do sistema em 04 segundos...")
+              Util.aguarde(1000)
+
+              limpa()
+              escreva("Saindo do sistema em 03 segundos...")
+              Util.aguarde(1000)
+
+              limpa()
+              escreva("Saindo do sistema em 02 segundos...")
+              Util.aguarde(1000)
+
+              limpa()
+              escreva("Saindo do sistema em 01 segundos...")
+              Util.aguarde(1000)
+
+              limpa()
+              escreva("Até a próxima!!! \n\n\n")
+
+              pare
+
+
+
+
+
+
+
+
+
+
+
+
+        }
     }
   }
 }
+
+}
+    
