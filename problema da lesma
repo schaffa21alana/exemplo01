@@ -1,19 +1,27 @@
-programa {
-  funcao inicio() {
+programa{
+   
+   inteiro altura
 
-    inteiro = altura
-    cadeia
+   funcao inicio() {
 
+    escreva("Qual é a altura da parede?\n")
+    leia(altura)
+    limpa()
 
-           limpa()
-            escreva("Informe o tamanho da parede:\n")
-            leia(altura)
+    se(altura == 1)
 
-            se altura <4m =altura= -2 
-            
-    
+    escreva(" A pobre lesmninha levará 1 dia para subir a parede de ", altura, " metros ")
 
-          
-  
-  }
+    senao 
+
+    se(altura <= 3) {
+
+      escreva(" A pobre lesminha levará 1 dia pra subir a parede de ", altura, " metros ")
+    }
+
+    senao{
+
+      escreva(" A pobre lesminha levará ", altura - 2, " dias pra subir a parede de ", altura, " metros ")
+    }
+   }
 }
